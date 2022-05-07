@@ -9,10 +9,14 @@ verification:
   success: 驗證鏈接已發送。請檢查您的郵箱。
   failed: 我們未能向您發送驗證鏈接。以下是詳細訊息 :msg
   mail:
+    hello: 您好！
     title: 在 :sitename 上驗證您的電子郵件地址
     message: 您因有人在 :sitename 上使用此電子郵件地址注冊賬戶而收到此電子郵件。
     reset: '點擊以驗證您的賬戶：<a href=":url">:url</a>'
     ignore: 如果您未注冊賬戶，請忽略這封郵件。
+    titleverified: '請點擊下面按鈕驗證您的 E-mail：'
+    verified: 驗證 E-mail
+    noreply: 此郵件由系統自動發送，請不要直接回复。
 score-intro:
   title: 什麼是積分?
   introduction: |

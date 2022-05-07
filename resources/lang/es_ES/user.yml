@@ -9,10 +9,14 @@ verification:
   success: El enlace de verificación fue enviado, por favor comprueba tu bandeja de entrada.
   failed: No hemos podido enviarte el enlace de verificación. Mensaje detallado :msg
   mail:
+    hello: ¡Hola!
     title: Verifique su cuenta en :sitename
     message: Está recibiendo este correo electrónico porque alguien registró una cuenta con esta dirección en :sitename.
     reset: 'Haga clic aquí para verificar su cuenta: <a href=":url">:url</a>'
     ignore: Si no registraste una cuenta, no se requiere ninguna acción adicional.
+    titleverified: 'Haga clic en el botón de abajo para verificar su correo electrónico:'
+    verified: Verificar correo electrónico
+    noreply: Este correo electrónico es enviado automáticamente por el sistema, por favor no responda directamente.
 score-intro:
   title: '¿Qué es la puntuación?'
   introduction: |

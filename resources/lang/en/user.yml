@@ -9,10 +9,14 @@ verification:
   success: Verification link was sent, please check your inbox.
   failed: We failed to send you the verification link. Detailed message :msg
   mail:
+    hello: Hello!
     title: Verify Your Account on :sitename
     message: You are receiving this email because someone registered an account with this email address on :sitename.
     reset: 'Click here to verify your account: <a href=":url">:url</a>'
     ignore: If you did not register an account, no further action is required.
+    titleverified: 'Please click the button below to verify your Email:'
+    verified: Verify E-mail
+    noreply: This email is automatically sent by the system, please do not reply directly.
 
 score-intro:
   title: What is score?

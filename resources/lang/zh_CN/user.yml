@@ -9,10 +9,14 @@ verification:
   success: 验证邮件已发送，请检查你的收件箱。
   failed: 邮件发送失败，详细信息：:msg
   mail:
+    hello: 您好！
     title: 验证您在 :sitename 上的账户邮箱
     message: 您收到这封邮件，是因为有人在 :sitename 注册时使用了本邮箱地址。
     reset: '点击此链接验证您的邮箱：<a href=":url">:url</a>'
     ignore: 如果您并没有访问过我们的网站，或没有进行上述操作，请忽略这封邮件。
+    titleverified: '请点击下面按钮验证您的 E-mail：'
+    verified: 验证 E-mail
+    noreply: 此邮件由系统自动发送，请不要直接回复。
 score-intro:
   title: 积分是什么？
   introduction: |

@@ -25,10 +25,13 @@ forgot:
   reset: Restablezca su contraseña
   notice: Este correo electrónico se envía automáticamente, no se enviará ninguna respuesta si responde.
   mail:
+    hello: ¡Hola!
     title: Restablezca su contraseña en :sitename
     message: Está recibiendo este correo electrónico porque solicitó restablecer la contraseña de su cuenta de usuario en :sitename.
     reset: 'Para restablecer su contraseña, por favor visite: <a href=":url">:url</a>'
     ignore: Si no solicitó un restablecimiento de contraseña, no se requiere ninguna acción adicional.
+    resetpass: restablecer la contraseña
+    noreply: Este correo electrónico es enviado automáticamente por el sistema, por favor no responda directamente.
 reset:
   title: Restablecer contraseña
   button: Restablecer

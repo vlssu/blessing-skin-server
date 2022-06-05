@@ -27,10 +27,13 @@ forgot:
   reset: Reset your password
   notice: This mail is sending automatically, no reponses will be sent if you reply.
   mail:
+    hello: Hello!
     title: Reset your password on :sitename
     message: You are receiving this email because we received a password reset request for your account on :sitename.
     reset: 'To reset your password, please visit: <a href=":url">:url</a>'
     ignore: If you did not request a password reset, no further action is required.
+    resetpass: reset Password
+    noreply: This email is automatically sent by the system, please do not reply directly.
 
 reset:
   title: Reset Password

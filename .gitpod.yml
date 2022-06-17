@@ -1,6 +1,6 @@
 tasks:
   - init: yarn install
-    command: yarn dev --config webpack.gitpod.config.ts
+    command: yarn dev
   - init: composer install
     command: |
       cp .env.example .env
@@ -9,7 +9,7 @@ tasks:
       sed 's/DB_DATABASE=blessingskin/DB_DATABASE=\/workspace\/blessing-skin-server\/storage\/database\.db/' -i .env
       php artisan key:generate
       php artisan serve --host=0.0.0.0
-  - command: gp await-port 8080 && gp preview $(gp url 8000)
+  - command: gp ports await 8080 && gp preview $(gp url 8000)
 
 github:
   prebuilds:
@@ -26,13 +26,13 @@ github:
 
 vscode:
   extensions:
-    - "editorconfig.editorconfig"
-    - "eamodio.gitlens"
-    - "bmewburn.vscode-intelephense-client"
-    - "esbenp.prettier-vscode"
-    - "jpoissonnier.vscode-styled-components"
-    - "mblode.twig-language-2"
-    - "felixfbecker.php-debug"
+    - 'editorconfig.editorconfig'
+    - 'eamodio.gitlens'
+    - 'bmewburn.vscode-intelephense-client'
+    - 'esbenp.prettier-vscode'
+    - 'jpoissonnier.vscode-styled-components'
+    - 'mblode.twig-language-2'
+    - 'felixfbecker.php-debug'
 
 ports:
   - port: 8080

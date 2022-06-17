@@ -3,10 +3,8 @@ import * as ReactDOM from 'react-dom'
 import './scripts/app'
 import routes from './scripts/route'
 
-if (process.env.NODE_ENV === 'development') {
-  window.React = React
-  window.ReactDOM = ReactDOM
-}
+window.React = React
+window.ReactDOM = ReactDOM
 
 if (blessing.route.startsWith('admin')) {
   const entry = document.querySelector<HTMLAnchorElement>('#launch-cli')

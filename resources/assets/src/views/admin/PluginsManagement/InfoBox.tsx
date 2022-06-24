@@ -2,6 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { t } from '@/scripts/i18n'
 import type { Plugin } from './types'
+import clsx from 'clsx'
 
 const Box = styled.div`
   cursor: default;
@@ -32,6 +33,7 @@ const ActionButton = styled.a`
 const Header = styled.div`
   max-width: calc(100% - 40px);
   display: flex;
+  align-items: center;
 `
 const Description = styled.div`
   font-size: 14px;
@@ -60,8 +62,10 @@ const InfoBox: React.FC<Props> = (props) => {
 
   const handleDelete = () => props.onDelete(plugin)
 
+  const isDarkMode = document.body.classList.contains('dark-mode')
+
   return (
-    <Box className="info-box mr-3">
+    <Box className={clsx('info-box', 'mr-3', { 'bg-gray-dark': isDarkMode })}>
       <span className={`info-box-icon bg-${plugin.icon.bg}`}>
         <i className={`${plugin.icon.faType} fa-${plugin.icon.fa}`} />
       </span>

@@ -90,7 +90,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Install dependencies
-        run: yarn
+        run: yarn install --frozen-lockfile
       - name: Run checks
         run: |
           yarn lint
@@ -120,7 +120,7 @@ jobs:
       - name: Cache Node dependencies
         uses: actions/cache@v3
         with:
-          path: yarn.lock
+          path: node_modules
           key: ${{ runner.os }}-yarn-lock-${{ hashFiles('yarn.lock') }}
           restore-keys: ${{ runner.os }}-yarn-lock-
       - name: Cache Composer dependencies

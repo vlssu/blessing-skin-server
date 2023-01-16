@@ -23,11 +23,11 @@ $manifest.php = '8.0.2'
 ConvertTo-Json $manifest | Out-File -FilePath update.json
 Write-Host "Update source is prepared." -ForegroundColor Green
 
-$azureToken = $env:AZURE_TOKEN
-git config --global user.email 'g-plane@hotmail.com'
-git config --global user.name 'Pig Fang'
-git init
-git add .
-git commit -m "Publish"
-git push -f "https://anything:$azureToken@dev.azure.com/blessing-skin/Blessing%20Skin%20Server/_git/Blessing%20Skin%20Server" master
-Write-Host "Update source is pushed to Azure Repos." -ForegroundColor Green
+# $azureToken = $env:AZURE_TOKEN
+# git config --global user.email 'g-plane@hotmail.com'
+# git config --global user.name 'Pig Fang'
+# git init
+# git add .
+# git commit -m "Publish"
+# git push -f "https://anything:$azureToken@dev.azure.com/blessing-skin/Blessing%20Skin%20Server/_git/Blessing%20Skin%20Server" master
+# Write-Host "Update source is pushed to Azure Repos." -ForegroundColor Green

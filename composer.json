@@ -34,13 +34,13 @@
     "symfony/process": "^5.0",
     "symfony/yaml": "^5.0",
     "twig/twig": "^2.11",
-    "vectorface/whip": "^0.3.2"
+    "vectorface/whip": "^0.4.0"
   },
   "require-dev": {
     "barryvdh/laravel-debugbar": "^3.5",
     "barryvdh/laravel-ide-helper": "^2.10",
     "fakerphp/faker": "^1.13",
-    "friendsofphp/php-cs-fixer": "^3.0",
+    "friendsofphp/php-cs-fixer": "^3.13",
     "laravel/browser-kit-testing": "^6.1",
     "laravel/tinker": "^2.4",
     "mockery/mockery": "^1.4",

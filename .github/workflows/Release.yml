@@ -39,3 +39,8 @@ jobs:
         asset_path: ./blessing-skin-server-${{ steps.get_version.outputs.VERSION }}.zip
         asset_name: blessing-skin-server-${{ steps.get_version.outputs.VERSION }}.zip
         asset_content_type: application/zip
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: skin
+        path: blessing-skin-server-*.zip

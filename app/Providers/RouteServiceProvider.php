@@ -5,9 +5,8 @@ namespace App\Providers;
 use App\Events\ConfigureRoutes;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Routing\Router;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
-use Laravel\Passport\Passport;
-use Route;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -20,7 +19,7 @@ class RouteServiceProvider extends ServiceProvider
     /**
      * Define the routes for the application.
      */
-    public function map(Router $router)
+    public function map(Router $router): void
     {
         $this->mapStaticRoutes($router);
 
@@ -28,7 +27,6 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapApiRoutes();
 
-        Passport::routes();
         foreach ($router->getRoutes()->getRoutesByName() as $name => $route) {
             if (Str::startsWith($name, ['passport.authorizations', 'passport.tokens', 'passport.clients'])) {
                 $route->middleware('verified');
@@ -42,7 +40,7 @@ class RouteServiceProvider extends ServiceProvider
      * Define the "web" routes for the application.
      * These routes all receive session state, CSRF protection, etc.
      */
-    protected function mapWebRoutes(Router $router)
+    protected function mapWebRoutes(Router $router): void
     {
         Route::middleware(['web'])
             ->namespace($this->namespace)
@@ -53,7 +51,7 @@ class RouteServiceProvider extends ServiceProvider
      * Define the "static" routes for the application.
      * These routes will not load session, etc.
      */
-    protected function mapStaticRoutes(Router $router)
+    protected function mapStaticRoutes(Router $router): void
     {
         Route::namespace($this->namespace)
             ->group(base_path('routes/static.php'));
@@ -63,7 +61,7 @@ class RouteServiceProvider extends ServiceProvider
      * Define the "api" routes for the application.
      * These routes are typically stateless.
      */
-    protected function mapApiRoutes()
+    protected function mapApiRoutes(): void
     {
         Route::prefix('api')
             ->middleware(

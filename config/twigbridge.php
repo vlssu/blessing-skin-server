@@ -9,11 +9,10 @@
  * file that was distributed with this source code.
  */
 
-/**
+/*
  * Configuration options for Twig.
  */
 return [
-
     'twig' => [
         /*
         |--------------------------------------------------------------------------
@@ -34,7 +33,6 @@ return [
         |
         */
         'environment' => [
-
             // When set to true, the generated templates have a __toString() method
             // that you can use to display the generated nodes.
             // default: false
@@ -43,10 +41,6 @@ return [
             // The charset used by the templates.
             // default: utf-8
             'charset' => 'utf-8',
-
-            // The base template class to use for generated templates.
-            // default: TwigBridge\Twig\Template
-            'base_template_class' => 'TwigBridge\Twig\Template',
 
             // An absolute path where to store the compiled templates, or false to disable caching. If null
             // then the cache file path is used.
@@ -75,6 +69,19 @@ return [
 
         /*
         |--------------------------------------------------------------------------
+        | Safe Classes
+        |--------------------------------------------------------------------------
+        |
+        | When set, the output of the `__string` method of the following classes will not be escaped.
+        | default: Laravel's Htmlable, which the HtmlString class implements.
+        |
+        */
+        'safe_classes' => [
+            \Illuminate\Contracts\Support\Htmlable::class => ['html'],
+        ],
+
+        /*
+        |--------------------------------------------------------------------------
         | Global variables
         |--------------------------------------------------------------------------
         |
@@ -86,7 +93,6 @@ return [
     ],
 
     'extensions' => [
-
         /*
         |--------------------------------------------------------------------------
         | Extensions
@@ -98,21 +104,21 @@ return [
         |
         */
         'enabled' => [
-            'Twig\Extension\StringLoaderExtension',
-
+            'TwigBridge\Extension\Laravel\Event',
             'TwigBridge\Extension\Loader\Facades',
             'TwigBridge\Extension\Loader\Filters',
             'TwigBridge\Extension\Loader\Functions',
+            'TwigBridge\Extension\Loader\Globals',
 
             'TwigBridge\Extension\Laravel\Auth',
             'TwigBridge\Extension\Laravel\Config',
             'TwigBridge\Extension\Laravel\Dump',
-            // 'TwigBridge\Extension\Laravel\Input',
+            'TwigBridge\Extension\Laravel\Input',
             'TwigBridge\Extension\Laravel\Session',
-            // 'TwigBridge\Extension\Laravel\Str',
+            'TwigBridge\Extension\Laravel\Str',
             'TwigBridge\Extension\Laravel\Translator',
             'TwigBridge\Extension\Laravel\Url',
-            // 'TwigBridge\Extension\Laravel\Model',
+            'TwigBridge\Extension\Laravel\Model',
             // 'TwigBridge\Extension\Laravel\Gate',
 
             // 'TwigBridge\Extension\Laravel\Form',
@@ -177,7 +183,12 @@ return [
         | </code>
         |
         */
-        'functions' => [],
+        'functions' => [
+            'elixir',
+            'head',
+            'last',
+            'mix',
+        ],
 
         /*
         |--------------------------------------------------------------------------

@@ -33,7 +33,6 @@ jobs:
       - name: Prepare
         run: |
           cp .env.example .env
-          php artisan key:generate
           mkdir -p resources/views/overrides
       - name: Validate Twig templates
         run: php artisan twig:lint -v
@@ -144,11 +143,13 @@ jobs:
           yarn build
           cp resources/assets/src/images/bg.webp public/app/
           cp resources/assets/src/images/favicon.ico public/app/
-      - uses: benjlevesque/short-sha@v1.2
+      - uses: benjlevesque/short-sha@v3.0
         id: short-sha
       - name: Archive release
         run: zip -9 -r blessing-skin-server-${{ steps.short-sha.outputs.sha }}.zip app bootstrap config database plugins public resources/lang resources/views resources/misc/textures routes storage vendor .env.example artisan LICENSE README.md README-zh.md index.html
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
+          if-no-files-found: error
+          name: blessing-skin-server-${{ steps.short-sha.outputs.sha }}.zip
           path: blessing-skin-server-${{ steps.short-sha.outputs.sha }}.zip

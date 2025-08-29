@@ -10,11 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v5
     - name: Build and create archive
       run: pwsh ./tools/release.ps1
     - name: Upload Artifacts
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v5
       with:
         name: blessing-skin-server Artifact
         path: ./*.zip

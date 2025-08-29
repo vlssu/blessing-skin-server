@@ -6,11 +6,11 @@ use App\Models\Player;
 use App\Models\Texture;
 use App\Models\User;
 use Blessing\Minecraft;
-use Cache;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Image;
-use Storage;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class TextureController extends Controller
 {
@@ -71,7 +71,8 @@ class TextureController extends Controller
 
                 $lastModified = $disk->lastModified($hash);
 
-                return Image::make($image)
+                // TODO: refactor
+                return \Intervention\Image\ImageManagerStatic::configure(['driver' => 'gd'])->make($image)
                     ->response($usePNG ? 'png' : 'webp', 100)
                     ->setLastModified(Carbon::createFromTimestamp($lastModified));
             }
@@ -145,7 +146,8 @@ class TextureController extends Controller
 
         $disk = Storage::disk('textures');
         if (is_null($texture) || $disk->missing($texture->hash)) {
-            return Image::make(resource_path("misc/textures/avatar$mode.png"))
+            // TODO: refactor
+            return \Intervention\Image\ImageManagerStatic::configure(['driver' => 'gd'])->make(resource_path("misc/textures/avatar$mode.png"))
                 ->resize($size, $size)
                 ->response($usePNG ? 'png' : 'webp', 100);
         }
@@ -165,7 +167,8 @@ class TextureController extends Controller
 
                 $lastModified = Carbon::createFromTimestamp($disk->lastModified($hash));
 
-                return Image::make($image)
+                // TODO: refactor
+                return \Intervention\Image\ImageManagerStatic::configure(['driver' => 'gd'])->make($image)
                     ->resize($size, $size)
                     ->response($usePNG ? 'png' : 'webp', 100)
                     ->setLastModified($lastModified);

@@ -43,7 +43,7 @@ $menu['admin'] = [
 $menu['explore'] = [
     ['title' => 'general.skinlib',         'link' => 'skinlib',              'icon' => 'fa-archive'],
     ['title' => 'general.manual',         'link' => 'manual',              'icon' => 'fa-book'],
-    ['title' => 'general.donate',         'link' => 'afdian.com/a/vlssu',              'icon' => 'fa-donate'],
+    ['title' => 'general.donate',         'link' => '//afdian.com/a/vlssu',              'icon' => 'fa-donate'],
     ['title' => 'general.server',         'link' => '//vlssu.cn',              'icon' => 'fa-server'],
 ];
 
